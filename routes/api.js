@@ -563,8 +563,4 @@ res.json(loghandler.invalidKey)
 }
 })
 
-router.get('/valor', (req, res) => {
-res.sendFile(__path + './../views/valor.html')
-})
-
 module.exports = router
