@@ -535,7 +535,7 @@ res.json(loghandler.invalidKey)
 }
 })
 
-router.get('/attp', async (req, res, next) => {
+router.get('/others/attp', async (req, res, next) => {
 text = req.query.text
 var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
@@ -549,7 +549,7 @@ res.json(loghandler.invalidKey)
 }
 })
 
-router.get('/ttp', async (req, res, next) => {
+router.get('/others/ttp', async (req, res, next) => {
 text = req.query.text
 var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
