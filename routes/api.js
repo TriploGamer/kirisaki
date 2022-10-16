@@ -45,101 +45,13 @@ PlayVideo,
 ytSearch
 } = require("./../database/youtube");
 
-loghandler = {
-    notparam: {
+resposta = {
+    semkey: {
         status: false,
         criador: `${criador}`,
         code: 406,
         mensagem: 'parâmetros de entrada de apikey',
-        getApikey: 'Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/5593991919748'
-    },
-    notkey: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros key'
-    },
-    noturl: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros url'
-    },
-    notkata: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros kata'
-    },
-    nottext: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros text'
-    },
-    nottext2: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros text2'
-    },
-    notnabi: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros nabi'
-    },
-    nottext3: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros text3'
-    },
-    nottheme: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros theme'
-    },
-    notusername: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros username'
-    },
-    notvalue: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros value'
-    },
-    notheme: {
-    	status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'o tema não está disponível, por favor, digite texmaker/list atau baca documentasi'
-     },
-    invalidKey: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'apikey invalida, Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/5593991919748'
-    },
-    invalidlink: {
-        status: false,
-        criador: `${criador}`,
-        mensagem: 'erro, talvez seu link seja inválido.'
-    },
-    invalidkata: {
-        status: false,
-        criador: `${criador}`,
-        mensagem: 'erro, talvez a palavra não esteja na api.'
-    },
-    notAddApiKey: {
-        status: false,
-        criador: `${criador}`,
-        code: 406,
-        mensagem: 'insira os parâmetros status, apikeyInput, email, nomorhp, name, age, country, exp'
+        getapikey: 'Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/5593991919748'
     },
     error: {
         status: false,
@@ -147,7 +59,8 @@ loghandler = {
         mensagem: 'talvez esteja sendo consertado'
     }
 }
-const listkey = ["key-free", "jg"];
+
+const listkey = ["key-ofc", "ale1", "ale2", "ale3", "ale4", "ale5", "ale6", "ale7", "ale8", "ale9", "ale10"];
 
 async function getBuffer(url) {
 he = await fetch(url).then(c => c.buffer())
@@ -162,17 +75,16 @@ he = nans[Math.floor(Math.random() * nans.length)]
  return he
 }
 
-async function cekApiKey(api) {
+async function cekapikey(api) {
 ap = await zahirr.findOne({apikey:api})
 return ap;
 }
 
 router.get('/find', async (req, res, next) => {
-    var apikey = req.query.apikey
-    if (!apikey) return res.json(loghandler.notparam)
-    if (apikey != 'supra') return res.json(loghandler.invalidKey)
-
-    try {
+var apikey = req.query.apikey
+if (!apikey) return res.json(resposta.semkey)
+if (apikey != 'supra') return res.json(resposta.semkey)
+try {
         zahirr.find()
             .then(result => {
                 res.json({
@@ -181,23 +93,22 @@ router.get('/find', async (req, res, next) => {
                     result
                 })
         })
-    } catch (e) {
-        console.log(e)
-        res.json(loghandler.error)
-    }
+} catch (e) {
+res.json(resposta.error)
+}
 })
 
 router.get('/cekapikey', async(req, res, next) => {
 const apikey = req.query.apikey;
-if(!apikey) return res.json(loghandler.notparam)
+if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)) {
 res.json({
-  status: 'APIKEY ATIVA',
+  status: 'apikey ATIVA',
   criador: `${criador}`,
   apikey: `${apikey}`,
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
@@ -218,13 +129,13 @@ router.get("/apikeyadd", async (req, res, next) => {
 // delete apikey
 
 router.get("/apikeydel", async (req, res, next) => {
-	const Apikey = req.query.apikey;
-	if(listkey.includes(Apikey)){
+	const apikey = req.query.apikey;
+	if(listkey.includes(apikey)){
 		res.json({
 			message: 'apikey não existia antes'
 			})
 			} else {
-	listkey.splice(Apikey, 1)
+	listkey.splice(apikey, 1)
 	res.json({
 		message: 'apikey excluído com sucesso' 
 });
@@ -237,9 +148,9 @@ router.get("/apikeydel", async (req, res, next) => {
 
 router.get('/youtube/playmp3', async (req, res, next) => {
 q = req.query.q
-var Apikey = req.query.apikey
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 PlayAudio(q).then((resultado) => {
 res.json({
 status: true,
@@ -253,15 +164,15 @@ msg: `erro no servidor interno`
 })
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/youtube/playmp4', async (req, res, next) => {
 q = req.query.q
-var Apikey = req.query.apikey
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 PlayVideo(q).then((resultado) => {
 res.json({
 status: true,
@@ -275,15 +186,15 @@ msg: `erro no servidor interno`
 })
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/youtube/mp3', async (req, res, next) => {
 link = req.query.link
-var Apikey = req.query.apikey
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 PlayLinkMP3(link).then((resultado) => {
 res.json({
 status: true,
@@ -297,15 +208,15 @@ msg: `erro no servidor interno`
 })
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/youtube/mp4', async (req, res, next) => {
 link = req.query.link
-var Apikey = req.query.apikey
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 PlayLinkMP4(link).then((resultado) => {
 res.json({
 status: true,
@@ -319,15 +230,15 @@ msg: `erro no servidor interno`
 })
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/youtube/pesquisar', async (req, res, next) => {
 q = req.query.q
-var Apikey = req.query.apikey
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 ytSearch(q).then(result => {
 res.json({
 status: true,
@@ -341,7 +252,7 @@ msg: `erro no servidor interno`
 })
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
@@ -351,15 +262,15 @@ res.json(loghandler.invalidKey)
 
 router.get('/download/tiktok', async (req, res, next) => {
 link = req.query.link
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 let tiktok_link = (`http://lzmods-api.tk/api/medias-sociais/tiktok_v2?link=${link}&apikey=lz`)
 let buffer = await getBuffer(tiktok_link)
 res.type('mp4')
 res.send(buffer)
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
@@ -378,15 +289,15 @@ if (!no) return res.json({ status : false, criador : `criador`, mensagem : "Colo
 if (!pe) return res.json({ status : false, criador : `criador`, mensagem : "Coloque Um perfil Valido"})
 if (!fu) return res.json({ status : false, criador : `criador`, mensagem : "Coloque Um fundo Valido"})
 if (!gr) return res.json({ status : false, criador : `criador`, mensagem : "Coloque Um grupo Valido"})
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 let welcomee = (`https://isyubii-api.tk/welcome?titulo=${ti}&nome=${no}&perfil=${pe}&fundo=${fu}&grupo=${gr}`)
 let buffer = await getBuffer(welcomee)
 res.type('png')
 res.send(buffer)
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
@@ -399,9 +310,9 @@ texto1 = req.query.texto1
 texto2 = req.query.texto2
 if (!texto1) return res.json({ status : false, criador : `criador`, mensagem : "Texto 1 Invalido"})
 if (!texto2) return res.json({ status : false, criador : `criador`, mensagem : "Texto 2 Invalido"})
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 thiccysapi.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [texto1, texto2]
 ).then(async (linkdaimagem) => {
 try { 
@@ -425,16 +336,16 @@ error: `${err}`,
 )}
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/textpro/halloween', async (req, res, next) => {
 texto = req.query.texto
 if (!texto) return res.json({ status : false, criador : `criador`, mensagem : "Texto 1 Invalido"})
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 thiccysapi.textpro("https://textpro.me/halloween-fire-text-effect-940.html", texto
 ).then(async (linkdaimagem) => {
 try { 
@@ -458,7 +369,7 @@ error: `${err}`,
 )}
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
@@ -471,24 +382,24 @@ emoji1 = req.query.emoji1
 emoji2 = req.query.emoji2
 if (!emoji1) return res.json({ status : false, criador : `criador`, mensagem : "Coloque Um texto Valido"})
 if (!emoji2) return res.json({ status : false, criador : `criador`, mensagem : "Coloque Um texto Valido"})
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 let emoji = (`https://luffy-api.herokuapp.com/api/maker/emojimix?emoji1=${emoji1}&emoji2=${emoji2}`)
 let buffer = await getBuffer(emoji)
 res.type('webp')
 res.send(buffer)
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/others/fazernick', async (req, res, next) => {
 txt = req.query.texto
 if (!txt) return res.json({ status : false, criador : `criador`, mensagem : "Coloque o parametro: texto"})
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 a = await Kibar(`https://isyubii-api.tk/api/fazernick?nome=${txt}&apikey=key-free`)
 res.json({
 status: true,
@@ -531,35 +442,35 @@ nicks33: `${a[33]}`,
 nicks34: `${a[34]}`}
 })
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/others/attp', async (req, res, next) => {
 texto = req.query.texto
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 let attp = (`https://api.xteam.xyz/attp?file&text=${texto}`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
 router.get('/others/ttp', async (req, res, next) => {
 texto = req.query.texto
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 let attp = (`https://isyubii-api.tk/api/ttp?texto=${texto}&apikey=key-free`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
 } else {
-res.json(loghandler.invalidKey)
+res.json(resposta.semkey)
 }
 })
 
