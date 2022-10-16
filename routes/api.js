@@ -240,7 +240,7 @@ q = req.query.q
 var Apikey = req.query.apikey
 if(!Apikey) return res.json(loghandler.notparam)
 if(listkey.includes(Apikey)){
-PlayAudio(quero).then((resultado) => {
+PlayAudio(q).then((resultado) => {
 res.json({
 status: true,
 código: 200,
@@ -262,7 +262,7 @@ q = req.query.q
 var Apikey = req.query.apikey
 if(!Apikey) return res.json(loghandler.notparam)
 if(listkey.includes(Apikey)){
-PlayVideo(quero).then((resultado) => {
+PlayVideo(q).then((resultado) => {
 res.json({
 status: true,
 código: 200,
@@ -564,7 +564,7 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/valor', (req, res) => {
-res.sendFile('./../views/valor.html')
+res.sendFile(__path + './../views/valor.html')
 })
 
 module.exports = router
