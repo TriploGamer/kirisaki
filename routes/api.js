@@ -8,7 +8,8 @@ var zahirr = db.get("jgbots");
 	console.log('')
 }
 var fs = require('fs');
-var criadorList = ['JG-Bots'];
+var criadorList = ["JG-Bots"];
+var dono = "558594034292"
 var criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 
 const path = require('path');
@@ -50,8 +51,7 @@ resposta = {
         status: false,
         criador: `${criador}`,
         code: 406,
-        mensagem: 'parâmetros de entrada de apikey',
-        getapikey: 'Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/5593991919748'
+        mensagem: `Erro ou apikey esta errada. Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/${dono}`,
     },
     error: {
         status: false,
