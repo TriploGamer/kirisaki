@@ -3,12 +3,12 @@ __path = process.cwd()
 var express = require('express');
 var db = require(__path + '/database/db');
 try {
-var zahirr = db.get("supra");
+var zahirr = db.get("jgbots");
 } catch (e) {
 	console.log('')
 }
 var fs = require('fs');
-var creatorList = ['@supra'];
+var creatorList = ['JG-Bots'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
 var ytdl = require('ytdl-core');
@@ -158,7 +158,7 @@ loghandler = {
         mensagem: 'talvez esteja sendo consertado'
     }
 }
-const listkey = ["supraz", "yuna", "lhannaBot"];
+const listkey = ["key-free", "jg"];
 var len = 15
         var arr = '123456789abcdefghijklmnopqrstuvwxyz'
         var random = '';
@@ -206,10 +206,9 @@ router.get('/cekapikey', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   if(listkey.includes(apikey)) {
     res.json({
-      status: 'active',
-      creator: `${creator}`,
+      status: 'APIKEY ATIVA',
+      criador: `${creator}`,
       apikey: `${apikey}`,
-      message: 'APIKEY ATIVA'
     })
   } else {
     res.json(loghandler.invalidKey)
