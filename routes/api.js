@@ -536,11 +536,11 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/others/attp', async (req, res, next) => {
-text = req.query.text
+texto = req.query.texto
 var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 if(listkey.includes(Apikey)){
-let attp = (`https://api.xteam.xyz/attp?file&text=${text}`)
+let attp = (`https://api.xteam.xyz/attp?file&text=${texto}`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
@@ -550,11 +550,11 @@ res.json(loghandler.invalidKey)
 })
 
 router.get('/others/ttp', async (req, res, next) => {
-text = req.query.text
+texto = req.query.texto
 var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 if(listkey.includes(Apikey)){
-let attp = (`https://isyubii-api.tk/api/ttp?texto=${text}&apikey=key-free`)
+let attp = (`https://isyubii-api.tk/api/ttp?texto=${texto}&apikey=key-free`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
