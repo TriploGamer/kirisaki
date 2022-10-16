@@ -23,6 +23,8 @@
     "url": "https://github.com/Supraofc/api-supra/issues"
   },
   "dependencies": {
+    "base-64": "^1.0.0",
+    "base32": "0.0.6",
     "request": "^2.88.2",
     "fs-extra": "^8.1.0",
     "crypto": "latest",
