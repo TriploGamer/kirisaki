@@ -23,13 +23,12 @@ var secure = require('ssl-express-www');
 var cors = require('cors');
 var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
-var TikTokScraper = require('tiktok-scraper');
 var request = require('request');
 var router  = express.Router();
 
 var { color, bgcolor } = require(__path + '/lib/color.js');
 var { fetchJson } = require(__path + '/lib/fetcher.js')
-var options = require(__path + '/lib/options.js');
+var options = require(__path + '/database/options.js');
 var {
 	Nulis,
 	Vokal,
@@ -44,7 +43,7 @@ PlayLinkMP4,
 PlayAudio,
 PlayVideo,
 ytSearch
-} = require("./../lib/utils/yt");
+} = require("./../database/youtube");
 
 loghandler = {
     notparam: {
@@ -349,23 +348,6 @@ res.json(loghandler.invalidKey)
 ///////////
 //////////////[ API'S DE DOWNLOADS ]///
 ///////////
-
-router.get('/download/tiktok2', async (req, res, next) => {
-link = req.query.link
-var Apikey = req.query.apikey;
-if(!Apikey) return res.json(loghandler.notparam)
-if(listkey.includes(Apikey)){
-TikTokScraper.getVideoMeta(link, options).then(vid => {
-res.json({
-  status: true,
-  criador: `${criador}`,
-  videoNoWm: vid
-})
-})
-} else {
-res.json(loghandler.invalidKey)
-}
-})
 
 router.get('/download/tiktok', async (req, res, next) => {
 link = req.query.link
