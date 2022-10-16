@@ -355,11 +355,10 @@ link = req.query.link
 var Apikey = req.query.apikey;
 if(!Apikey) return res.json(loghandler.notparam)
 if(listkey.includes(Apikey)){
-TikTokScraper.getVideoMeta(link, options)
-.then(vid => {
+TikTokScraper.getVideoMeta(link, options).then(vid => {
 res.json({
   status: true,
-  creator: `${creator}`,
+  criador: `${criador}`,
   videoNoWm: vid
 })
 })
