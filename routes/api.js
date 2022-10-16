@@ -23,6 +23,7 @@ var secure = require('ssl-express-www');
 var cors = require('cors');
 var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
+var TikTokScraper = require('tiktok-scraper');
 var request = require('request');
 var router  = express.Router();
 
@@ -348,6 +349,24 @@ res.json(loghandler.invalidKey)
 ///////////
 //////////////[ API'S DE DOWNLOADS ]///
 ///////////
+
+router.get('/download/tiktok2', async (req, res, next) => {
+link = req.query.link
+var Apikey = req.query.apikey;
+if(!Apikey) return res.json(loghandler.notparam)
+if(listkey.includes(Apikey)){
+TikTokScraper.getVideoMeta(link, options)
+.then(vid => {
+res.json({
+  status: true,
+  creator: `${creator}`,
+  videoNoWm: vid
+})
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/download/tiktok', async (req, res, next) => {
 link = req.query.link
