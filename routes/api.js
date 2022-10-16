@@ -51,7 +51,7 @@ resposta = {
         status: false,
         criador: `${criador}`,
         code: 406,
-        mensagem: `Erro ou apikey esta errada. Não tem apikey? Chame e compre sua chave por apenas 10 R$ wa.me/${dono}`,
+        mensagem: `Erro ou apikey esta errada. Não tem apikey? Chame e compre sua chave por apenas 15 R$ wa.me/${dono}`,
     },
     error: {
         status: false,
