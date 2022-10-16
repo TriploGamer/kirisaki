@@ -11,13 +11,18 @@ var fs = require('fs');
 var criadorList = ['JG-Bots'];
 var criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 
+const path = require('path');
+var thiccysapi = require('textmaker-thiccy')
+var { exec } = require('child_process')
+const axios = require("axios");
+const cheerio = require("cheerio");
+var express = require('express');
 var ytdl = require('ytdl-core');
 var ytpl = require('ytpl');
 var secure = require('ssl-express-www');
 var cors = require('cors');
 var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
-var cheerio = require('cheerio');
 var request = require('request');
 var router  = express.Router();
 
@@ -32,29 +37,13 @@ var {
     Gempa
 } = require('./../lib');
 var cookie = "HSID=A7EDzLn3kae2B1Njb;SSID=AheuwUjMojTWvA5GN;APISID=cgfXh13rQbb4zbLP/AlvlPJ2xBJBsykmS_;SAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;__Secure-3PAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;VISITOR_INFO1_LIVE=RgZLnZtCoPU;LOGIN_INFO=AFmmF2swRQIhAOXIXsKVou2azuz-kTsCKpbM9szRExAMUD-OwHYiuB6eAiAyPm4Ag3O9rbma7umBK-AG1zoGqyJinh4ia03csp5Nkw:QUQ3MjNmeXJ0UHFRS3dzaTNGRmlWR2FfMDRxa2NRYTFiN3lfTEdOVTc4QUlwbUI4S2dlVngxSG10N3ZqcHZwTHBKano5SkN2dDlPSkhRMUtReE42TkhYeUVWS3kyUE1jY2I1QzA1MDZBaktwd1llWU9lOWE4NWhoZV92aDkxeE9vMTNlcG1uMU9rYjhOaDZWdno2ZzN3TXl5TVNhSjNBRnJaMExrQXpoa2xzRVUteFNWZDI5S0Fn;PREF=app=desktop&f4=4000000&al=id;SID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1njBpLTOpxSfN-EaYCRSiDg.;YSC=HCowA1fmvzo;__Secure-3PSID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1dajgWzlBh9TgKapGOwuXfA.;SIDCC=AJi4QfFK0ri9fSfMjMQ4tOJNp6vOb9emETXB_nf2S05mvr2jBlmeEvlSsQSzPMuJl_V0wcbL1r8;__Secure-3PSIDCC=AJi4QfGeWHx-c4uTpU1rXCciO1p0s2fJWU07KrkZhWyD1Tqi8LyR-kHuBwHY9mViVYu1fRh2PA";
-var {
+const {
 PlayLinkMP3,
 PlayLinkMP4,
 PlayAudio,
 PlayVideo,
 ytSearch
 } = require("./../lib/utils/yt");
-
-var {
-  pShadow,
-  pRomantic,
-  pSmoke,
-  pBurnPapper,
-  pNaruto,
-  pLoveMsg,
-  pMsgGrass,
-  pGlitch,
-  pDoubleHeart,
-  pCoffeCup,
-  pLoveText,
-  pButterfly
-} = require("./../lib/utils/photooxy");
-
 
 loghandler = {
     notparam: {
@@ -159,28 +148,25 @@ loghandler = {
     }
 }
 const listkey = ["key-free", "jg"];
-var len = 15
-        var arr = '123456789abcdefghijklmnopqrstuvwxyz'
-        var random = '';
 
-        for (var i = len; i > 0; i--) {
-            random += arr[Math.floor(Math.random() * arr.length)];
-        }
+async function getBuffer(url) {
+he = await fetch(url).then(c => c.buffer())
+ return he
+}
+async function Kibar(url) {
+he = await fetch(url).then(c => c.json())
+ return he
+}
+function MathRandom(nans) {
+he = nans[Math.floor(Math.random() * nans.length)]
+ return he
+}
 
-        var lenn = 5
-        var randomlagi = '';
+async function cekApiKey(api) {
+ap = await zahirr.findOne({apikey:api})
+return ap;
+}
 
-        for (var i = lenn; i > 0; i--) {
-            randomlagi += arr[Math.floor(Math.random() * arr.length)];
-        }
-
-        var randomTextNumber = random+randomlagi+'---------ZahirGanteng'+'ZHIRRR--GANS';
-        
- 
- async function cekApiKey(api) {
- 	ap = await zahirr.findOne({apikey:api})
- return ap;
- }
 router.get('/find', async (req, res, next) => {
     var apikey = req.query.apikey
     if (!apikey) return res.json(loghandler.notparam)
@@ -202,20 +188,20 @@ router.get('/find', async (req, res, next) => {
 })
 
 router.get('/cekapikey', async(req, res, next) => {
-  const apikey = req.query.apikey;
-  if(!apikey) return res.json(loghandler.notparam)
-  if(listkey.includes(apikey)) {
-    res.json({
-      status: 'APIKEY ATIVA',
-      criador: `${criador}`,
-      apikey: `${apikey}`,
-    })
-  } else {
-    res.json(loghandler.invalidKey)
-  }
+const apikey = req.query.apikey;
+if(!apikey) return res.json(loghandler.notparam)
+if(listkey.includes(apikey)) {
+res.json({
+  status: 'APIKEY ATIVA',
+  criador: `${criador}`,
+  apikey: `${apikey}`,
+})
+} else {
+res.json(loghandler.invalidKey)
+}
 })
 
-router.get("/apikey18", async (req, res, next) => {
+router.get("/apikeyadd", async (req, res, next) => {
   const key = req.query.key;
   if(listkey.includes(key)) {
     res.json({
@@ -231,7 +217,7 @@ router.get("/apikey18", async (req, res, next) => {
 
 // delete apikey
 
-router.get("/apikey18d", async (req, res, next) => {
+router.get("/apikeydel", async (req, res, next) => {
 	const Apikey = req.query.apikey;
 	if(listkey.includes(Apikey)){
 		res.json({
