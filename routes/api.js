@@ -265,7 +265,7 @@ link = req.query.link
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let tiktok_link = (`http://lzmods-api.tk/api/medias-sociais/tiktok_v2?link=${link}&apikey=lz`)
+let tiktok_link = (`https://aquivos.herokuapp.com/tiktok?link=${link}`)
 let buffer = await getBuffer(tiktok_link)
 res.type('mp4')
 res.send(buffer)
@@ -292,7 +292,7 @@ if (!gr) return res.json({ status : false, criador : `criador`, mensagem : "Colo
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let welcomee = (`https://isyubii-api.tk/welcome?titulo=${ti}&nome=${no}&perfil=${pe}&fundo=${fu}&grupo=${gr}`)
+let welcomee = (`https://aquivos.herokuapp.com/welcome?titulo=${ti}&nome=${no}&perfil=${pe}&fundo=${fu}&grupo=${gr}`)
 let buffer = await getBuffer(welcomee)
 res.type('png')
 res.send(buffer)
@@ -385,7 +385,7 @@ if (!emoji2) return res.json({ status : false, criador : `criador`, mensagem : "
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let emoji = (`https://luffy-api.herokuapp.com/api/maker/emojimix?emoji1=${emoji1}&emoji2=${emoji2}`)
+let emoji = (`https://aquivos.herokuapp.com/emojimix?emoji1=${emoji1}&emoji2=${emoji2}`)
 let buffer = await getBuffer(emoji)
 res.type('webp')
 res.send(buffer)
@@ -400,46 +400,46 @@ if (!txt) return res.json({ status : false, criador : `criador`, mensagem : "Col
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-a = await Kibar(`https://isyubii-api.tk/api/fazernick?nome=${txt}&apikey=key-free`)
+a = await Kibar(`https://aquivos.herokuapp.com/fazernick?texto=${txt}`)
 res.json({
 status: true,
 código: 999,
 criador: `${criador}`,
 resultado: {
-nicks1: `${a[0]}`,
-nicks2: `${a[1]}`,
-nicks3: `${a[2]}`,
-nicks4: `${a[3]}`,
-nicks5: `${a[4]}`,
-nicks6: `${a[5]}`,
-nicks7: `${a[6]}`,
-nicks8: `${a[7]}`,
-nicks9: `${a[8]}`,
-nicks10: `${a[9]}`,
-nicks11: `${a[10]}`,
-nicks12: `${a[11]}`,
-nicks13: `${a[12]}`,
-nicks14: `${a[13]}`,
-nicks15: `${a[14]}`,
-nicks16: `${a[15]}`,
-nicks17: `${a[16]}`,
-nicks18: `${a[18]}`,
-nicks19: `${a[19]}`,
-nicks20: `${a[20]}`,
-nicks21: `${a[21]}`,
-nicks22: `${a[22]}`,
-nicks23: `${a[23]}`,
-nicks24: `${a[24]}`,
-nicks25: `${a[25]}`,
-nicks26: `${a[26]}`,
-nicks27: `${a[27]}`,
-nicks28: `${a[28]}`,
-nicks29: `${a[29]}`,
-nicks30: `${a[30]}`,
-nicks31: `${a[31]}`,
-nicks32: `${a[32]}`,
-nicks33: `${a[33]}`,
-nicks34: `${a[34]}`}
+nicks1: `${a.n1}`,
+nicks2: `${a.n2}`,
+nicks3: `${a.n3}`,
+nicks4: `${a.n4}`,
+nicks5: `${a.n5}`,
+nicks6: `${a.n6}`,
+nicks7: `${a.n7}`,
+nicks8: `${a.n8}`,
+nicks9: `${a.n9}`,
+nicks10: `${a.n10}`,
+nicks11: `${a.n11}`,
+nicks12: `${a.n12}`,
+nicks13: `${a.n13}`,
+nicks14: `${a.n14}`,
+nicks15: `${a.n15}`,
+nicks16: `${a.n16}`,
+nicks17: `${a.n17}`,
+nicks18: `${a.n18}`,
+nicks19: `${a.n19}`,
+nicks20: `${a.n20}`,
+nicks21: `${a.n21}`,
+nicks22: `${a.n22}`,
+nicks23: `${a.n23}`,
+nicks24: `${a.n24}`,
+nicks25: `${a.n25}`,
+nicks26: `${a.n26}`,
+nicks27: `${a.n27}`,
+nicks28: `${a.n28}`,
+nicks29: `${a.n29}`,
+nicks30: `${a.n30}`,
+nicks31: `${a.n31}`,
+nicks32: `${a.n32}`,
+nicks33: `${a.n33}`,
+nicks34: `${a.n34}`}
 })
 } else {
 res.json(resposta.semkey)
@@ -451,7 +451,7 @@ texto = req.query.texto
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let attp = (`https://api.xteam.xyz/attp?file&text=${texto}`)
+let attp = (`https://aquivos.herokuapp.com/attp?texto=${texto}`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
@@ -465,7 +465,7 @@ texto = req.query.texto
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let attp = (`https://isyubii-api.tk/api/ttp?texto=${texto}&apikey=key-free`)
+let attp = (`https://aquivos.herokuapp.com/ttp?texto=${texto}`)
 let buffer = await getBuffer(attp)
 res.type('webp')
 res.send(buffer)
