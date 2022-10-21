@@ -1,27 +1,18 @@
 {
-  "name": "Supra-api",
-  "version": "1.1.0",
-  "description": "My Rest Api Projectttttt",
+  "name": "kurumi-base-api",
+  "version": "1.0.0",
+  "description": "minha base de api feita por ᥬ✯𝓙𝓖-𝓑𝓸𝓽𝓼ツ​᭄",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Supraofc/api-supra.git"
-  },
   "keywords": [
     "simple",
-    "api",
     "rest",
     "api"
   ],
-  "author": "zeeone",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Supraofc/api-supra/issues"
-  },
+  "author": "ᥬ✯𝓙𝓖-𝓑𝓸𝓽𝓼ツ​᭄",
   "dependencies": {
     "base-64": "^1.0.0",
     "base32": "0.0.6",
@@ -53,6 +44,5 @@
     "tiktok-scraper": "^1.4.12",
     "urlencode": "^1.1.0",
     "ytpl": "^2.0.5"
-  },
-  "homepage": "https://github.com/Supraofc/api-supra#readme"
+  }
 }
