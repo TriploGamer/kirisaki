@@ -27,6 +27,13 @@ var fetch = require('node-fetch');
 var request = require('request');
 var router  = express.Router();
 
+var download = function(uri, filename, callback){
+request.head(uri, function(err, res, body){
+console.log('content-type:', res.headers['content-type']);
+request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+});
+};
+
 var { color, bgcolor } = require(__path + '/lib/color.js');
 var { fetchJson } = require(__path + '/lib/fetcher.js')
 var options = require(__path + '/database/options.js');
@@ -315,30 +322,13 @@ if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
 thiccysapi.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [texto1, texto2]
 ).then(async (linkdaimagem) => {
-try { 
-res.json({
-status: true,
-código: 777,
-criador: `${criador}`,
-resultado: {
-img: `${linkdaimagem}`,
-}
+var urlnya = linkdaimagem
+download(urlnya, './tmp/hp.jpg', function(){
+res.sendFile(path.resolve('./tmp/hp.jpg'))
 })
-} catch(err) { 
-console.log(err)
-res.json({
-status: false,
-código: 666,
-criador: `${criador}`,
-resultado: {
-error: `${err}`,
-}}
+})
+}
 )}
-})
-} else {
-res.json(resposta.semkey)
-}
-})
 
 router.get('/textpro/halloween', async (req, res, next) => {
 texto = req.query.texto
