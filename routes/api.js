@@ -27,13 +27,6 @@ var fetch = require('node-fetch');
 var request = require('request');
 var router  = express.Router();
 
-var download = function(uri, filename, callback){
-request.head(uri, function(err, res, body){
-console.log('content-type:', res.headers['content-type']);
-request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-});
-};
-
 var { color, bgcolor } = require(__path + '/lib/color.js');
 var { fetchJson } = require(__path + '/lib/fetcher.js')
 var options = require(__path + '/database/options.js');
