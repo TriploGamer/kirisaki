@@ -474,7 +474,7 @@ res.json(resposta.semkey)
 }
 })
 
-router.get('/consutas/geradordedados', async (req, res, next) => {
+router.get('/consultas/geradordedados', async (req, res, next) => {
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
