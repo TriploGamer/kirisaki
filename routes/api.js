@@ -338,7 +338,7 @@ error: `${err}`,
 } else {
 res.json(resposta.semkey)
 }
-)}
+})
 
 router.get('/textpro/halloween', async (req, res, next) => {
 texto = req.query.texto
