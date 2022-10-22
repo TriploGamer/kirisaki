@@ -474,11 +474,11 @@ res.json(resposta.semkey)
 }
 })
 
-router.get('/testee', async (req, res, next) => {
+router.get('/consutas/geradordedados', async (req, res, next) => {
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-var amv = JSON.parse(fs.readFileSync(__path + '/database/amv.json'))
+var amv = JSON.parse(fs.readFileSync(__path + '/database/geradordedados.json'))
 res
 .status(200)
 .json({
