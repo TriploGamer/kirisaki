@@ -322,11 +322,24 @@ if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
 thiccysapi.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [texto1, texto2]
 ).then(async (linkdaimagem) => {
+try {
 var urlnya = linkdaimagem
 download(urlnya, './tmp/hp.jpg', function(){
 res.sendFile(path.resolve('./tmp/hp.jpg'))
 })
+} catch(err) {
+console.log(err)
+res.json({
+status: false,
+código: 666,
+criador: `${criador}`,
+resultado: {
+error: `${err}`,
+}}
+)}
 })
+} else {
+res.json(resposta.semkey)
 }
 )}
 
