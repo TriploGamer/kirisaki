@@ -42,6 +42,7 @@
     "scrape-yt": "^1.4.8",
     "tiktok-scraper": "^1.4.12",
     "urlencode": "^1.1.0",
-    "ytpl": "^2.0.5"
+    "ytpl": "^2.0.5",
+    "lolkil-scraper": "github:LoliKillers/lolkil-scraper"
   }
 }
