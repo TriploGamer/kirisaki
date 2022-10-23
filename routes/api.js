@@ -266,6 +266,20 @@ link = req.query.link
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
+let tiktok_link = (`https://aquivos.herokuapp.com/tiktok?link=${link}`)
+let buffer = await getBuffer(tiktok_link)
+res.type('mp4')
+res.send(buffer)
+} else {
+res.json(resposta.semkey)
+}
+})
+
+router.get('/download/tiktok2', async (req, res, next) => {
+link = req.query.link
+var apikey = req.query.apikey;
+if(!apikey) return res.json(resposta.semkey)
+if(listkey.includes(apikey)){
 lol.download.tiktok(link)
 .then(async data => {
 var result = {
