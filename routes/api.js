@@ -25,6 +25,7 @@ var cors = require('cors');
 var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
 var request = require('request');
+const lol = require('lolkil-scraper');
 var router  = express.Router();
 
 var { color, bgcolor } = require(__path + '/lib/color.js');
@@ -265,10 +266,14 @@ link = req.query.link
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-let tiktok_link = (`https://aquivos.herokuapp.com/tiktok?link=${link}`)
-let buffer = await getBuffer(tiktok_link)
-res.type('mp4')
-res.send(buffer)
+lol.download.tiktok(url)
+.then(async data => {
+res.json({
+  status: 200,
+  criador: `${criador}`,
+  result: data
+})
+})
 } else {
 res.json(resposta.semkey)
 }
