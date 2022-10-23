@@ -266,13 +266,14 @@ link = req.query.link
 var apikey = req.query.apikey;
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-lol.download.tiktok(url)
+lol.download.tiktok(link)
 .then(async data => {
 var result = {
   status: 200,
   criador: `${criador}`,
   result: data.result
-}
+};
+res.json(result);
 })
 } else {
 res.json(resposta.semkey)
