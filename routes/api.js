@@ -268,11 +268,11 @@ if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
 lol.download.tiktok(url)
 .then(async data => {
-res.json({
+var result = {
   status: 200,
   criador: `${criador}`,
-  result: data
-})
+  result: data.result
+}
 })
 } else {
 res.json(resposta.semkey)
