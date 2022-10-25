@@ -39,7 +39,7 @@
 =========================================================
 -->
 
-<li class="active">
+<li>
 <a href="index.html">
 <i class="tim-icons icon-chart-pie-36"></i>
 <p>Dashboard</p>
@@ -52,7 +52,7 @@
 =========================================================
 -->
 
-<li class="dropdown nav-item">
+<li class="active dropdown nav-item">
 <a href="outras.html">Outras
 <i class="tim-icons icon-tag"></i>
 </a>
@@ -172,60 +172,113 @@
 <!-- End Navbar -->
 
 <div class="content">
-<div class="row">
-<div class="col-xl-3 col-lg-6 col-md-12 col-xm-12">
-<div class="card overflow-hidden dash1-card border-0">
-<div class="card-body">
-<div class="d-flex align-items-end justify-content-between">
-<div>
-<p class=" mb-1 ">ENDEREÇO IP ↯</p>
-<h2 class="mb-1 number-font">
-<div id="ip">
-<html>
-<body>
-<script type="text/javascript">
-var userip;
-</script>
-<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
-<h3 class="mb-0" ><script type="text/javascript">
-document.write(userip);
-</script></h3>
-</body>
-</html>
-</div>
-</h2>
-<small class="fs-12 text-muted">Seu IP</small>
-</div>
-<span class="text-info fs-35 dash1-iocns bg-info-transparent border-info"><i class="fa fa-wifi" aria-hidden="true"></i></span>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="col-lg-6 col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title">Api's Abaixo!</h4>
+        </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+<thead class="text-primary">
+    <tr>
+    <th>Api</th>
+    <th class="text-center">Require</th>
+    <th class="text-center">Status</th>
+    <th class="text-center">GetJson</th>
+    </tr>
+</thead>
 
-<form action="/api/cekapikey">
-<div class="row">
-<div class="col-xl-12 col-lg-12 col-md-12">
-<div class="card">
-<div class="card-header">
-<h4 class="card-title"><i class="tim-icons icon-key-25" aria-hidden="true"></i> CHECAR SE A KEY É VÁLIDA</h4>
-</div>
-<div class="card-body text-sm-left font-weight-bold">
-<input class="form-control font-weight-bold text-center" type="text" placeholder="DIGITE A KEY" name="apikey" required>
-<small id="textHelp" class="font">
-não tem apikey? compre uma agora!
-<a href="https://wa.me/6285852203076">
-Whatsapp
+<!--
+=========================================================
+* * Itens aqui
+=========================================================
+-->
+
+  <tbody>
+
+<tr>
+<td>TTP</td>
+<td class="text-center">query & apikey</td>
+<td class="text-center">
+<span
+class="text-success tim-icons icon-check-2"></span>
+</td>
+<td class="text-center">
+<a type="button" class="text-success btn-sm btn-icons" href="/api/others/ttp?texto=Jerfinhopro&apikey=SUA-KEY" target="_blank" rel="nofollow" title="Try">
+<i class="tim-icons icon-minimal-right"></i>
 </a>
-</small>
-</br>
-</br>
-<button type="submit" class="btn btn-primary content-justify-center"><i class="mdi mdi-arrow-right-bold-hexagon-outline"></i> <span class="font-weight-bold">CHECAR</span></button>
+</td>
+</tr>
+
+  </tbody>
+
+  <tbody>
+
+<tr>
+<td>ATTP</td>
+<td class="text-center">query & apikey</td>
+<td class="text-center">
+<span
+class="text-success tim-icons icon-check-2"></span>
+</td>
+<td class="text-center">
+<a type="button" class="text-success btn-sm btn-icons" href="/api/others/attp?texto=Jerfinhopro&apikey=SUA-KEY" target="_blank" rel="nofollow" title="Try">
+<i class="tim-icons icon-minimal-right"></i>
+</a>
+</td>
+</tr>
+
+  </tbody>
+
+  <tbody>
+
+<tr>
+<td>FAZERNICK</td>
+<td class="text-center">query & apikey</td>
+<td class="text-center">
+<span
+class="text-success tim-icons icon-check-2"></span>
+</td>
+<td class="text-center">
+<a type="button" class="text-success btn-sm btn-icons" href="/api/others/fazernick?texto=JG-Bots&apikey=SUA-KEY" target="_blank" rel="nofollow" title="Try">
+<i class="tim-icons icon-minimal-right"></i>
+</a>
+</td>
+</tr>
+
+  </tbody>
+
+  <tbody>
+
+<tr>
+<td>EMOJIMIX</td>
+<td class="text-center">query & apikey</td>
+<td class="text-center">
+<span
+class="text-success tim-icons icon-check-2"></span>
+</td>
+<td class="text-center">
+<a type="button" class="text-success btn-sm btn-icons" href="/api/others/emojimix?emoji1=%F0%9F%98%94&emoji2=%F0%9F%98%AD&apikey=SUA-KEY" target="_blank" rel="nofollow" title="Try">
+<i class="tim-icons icon-minimal-right"></i>
+</a>
+</td>
+</tr>
+
+  </tbody>
+
+<!--
+=========================================================
+* * Termino
+=========================================================
+-->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</form>
 
 <!--
 =========================================================
@@ -403,20 +456,4 @@ Whatsapp
         application: "black-dashboard-free"
       });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js">
-</script>
-<script>
-swal({
-title: 'Oii',
-text: 'Site de Api, sendo desenvolvido por JG-Bots',
-imageUrl: 'https://telegra.ph/file/ff1e809ddb89101c73838.jpg',
-footer: 'Made By JG-Bots',
-imageWidth: 200,
-imageHeight: 200,
-imageAlt: ':)',
-animation: true
-})
-</script>
 </body>
-
-</html>
