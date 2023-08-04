@@ -27,7 +27,7 @@ const criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
    ///ARQUIVOS DE SCRAPING OU SEI LA\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const { ttp } = require(__path + '/lib/scrapper.js')
+
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
            ///RESPOSTAS DA API\\\
@@ -335,23 +335,6 @@ simi = await Kibar(`https://api.simsimi.net/v2/?text=${txt}&lc=pt`)
 res.json({
 success: `${simi.success}`
 })
-} else {
-res.json(resposta.semkey)
-}
-})
-
-router.get('/others/ttp', async (req, res, next) => {
-texto = req.query.texto
-var apikey = req.query.apikey;
-if(!apikey) return res.json(resposta.semkey)
-if(listkey.includes(apikey)){
-ttp(texto)
-.then((result) => {
-nick = result.result;
-res.json({criador: `${criador}`, nick});
-}).catch((error) => {
-res.json(error);
-});
 } else {
 res.json(resposta.semkey)
 }
