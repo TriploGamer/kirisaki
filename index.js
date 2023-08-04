@@ -1,13 +1,22 @@
-var express = require('express'),
-    cors = require('cors'),
-    secure = require('ssl-express-www');
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+           ///MODULOS E CONTS\\\
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+const express = require('express')
+const cors = require('cors')
+const secure = require('ssl-express-www')
 const PORT = process.env.PORT || 8080 || 5000 || 3000
-var { color } = require('./lib/color.js')
+const { color } = require('./lib/color.js')
 
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+   ///PUXADOR DE ARQUIV INPORTANTE!\\\
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+const mainrouter = require('./routes/main')
+const apirouter = require('./routes/api')
 
-var app = express()
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+     ///INICIAR DA API NÃO APAGUE\\\
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+const app = express()
 app.enable('trust proxy');
 app.set("json spaces",2)
 app.use(cors())
@@ -17,8 +26,15 @@ app.use(express.static("public"))
 app.use('/', mainrouter)
 app.use('/api', apirouter)
 
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+///O ABRIDOR OU SEILA DA PORTA KAKAK\\\
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
 app.listen(PORT, () => {
-    console.log(color("Servidor rodando na porta " + PORT,'green'))
+console.log(color("Servidor rodando na porta: " + PORT,'red'))
+console.log(color(`entre no site: http://localhost:${PORT}/`,'green'))
 })
 
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+               ///CABOOOO ;-; \\\
+///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
 module.exports = app
