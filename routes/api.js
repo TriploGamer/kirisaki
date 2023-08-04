@@ -26,7 +26,6 @@ const criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
    ///ARQUIVOS DE SCRAPING OU SEI LA\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const { PlayLinkMP3, PlayLinkMP4, PlayAudio, PlayVideo, ytSearch } = require("./../database/youtube");
 const { ttp } = require(__path + '/lib/scrapper.js');
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
@@ -127,18 +126,24 @@ router.get("/apikeydel", async (req, res, next) => {
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
             ///API'S DE YOUTUBE\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-router.get('/youtube/playmp3', async (req, res, next) => {
+router.get('/youtube/playa', async (req, res, next) => {
 q = req.query.q
 var apikey = req.query.apikey
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-PlayAudio(q).then((resultado) => {
+a = await Kibar(`https://tohka.tech/api/dl/play?nome=${q}&apikey=MyfJh6pcMk`)
 res.json({
 status: true,
 código: 200,
 criador: `${criador}`,
-resultado: resultado
-})
+resultado: {
+   titulo: `${a.resultado.título}`,
+   thumb: `${a.resultado.thumb}`,
+   canal: `${a.resultado.canal}`,
+   publicado: `${a.resultado.publicado}`,
+   visualizações: `${a.resultado.visualizações}`,
+   link: `${a.resultado.link}`
+}
 }).catch(e => {
 res.json({
 msg: `erro no servidor interno`
@@ -149,84 +154,24 @@ res.json(resposta.semkey)
 }
 })
 
-router.get('/youtube/playmp4', async (req, res, next) => {
+router.get('/youtube/playv', async (req, res, next) => {
 q = req.query.q
 var apikey = req.query.apikey
 if(!apikey) return res.json(resposta.semkey)
 if(listkey.includes(apikey)){
-PlayVideo(q).then((resultado) => {
+b = await Kibar(`https://tohka.tech/api/dl/playv?nome=${q}&apikey=MyfJh6pcMk`)
 res.json({
 status: true,
 código: 200,
 criador: `${criador}`,
-resultado: resultado
-})
-}).catch(e => {
-res.json({
-msg: `erro no servidor interno`
-})
-})
-} else {
-res.json(resposta.semkey)
+resultado: {
+   titulo: `${b.resultado.título}`,
+   thumb: `${b.resultado.thumb}`,
+   canal: `${b.resultado.canal}`,
+   publicado: `${b.resultado.publicado}`,
+   visualizações: `${b.resultado.visualizações}`,
+   link: `${b.resultado.url}`
 }
-})
-
-router.get('/youtube/mp3', async (req, res, next) => {
-link = req.query.link
-var apikey = req.query.apikey
-if(!apikey) return res.json(resposta.semkey)
-if(listkey.includes(apikey)){
-PlayLinkMP3(link).then((resultado) => {
-res.json({
-status: true,
-código: 200,
-criador: `${criador}`,
-resultado: resultado
-})
-}).catch(e => {
-res.json({
-msg: `erro no servidor interno`
-})
-})
-} else {
-res.json(resposta.semkey)
-}
-})
-
-router.get('/youtube/mp4', async (req, res, next) => {
-link = req.query.link
-var apikey = req.query.apikey
-if(!apikey) return res.json(resposta.semkey)
-if(listkey.includes(apikey)){
-PlayLinkMP4(link).then((resultado) => {
-res.json({
-status: true,
-código: 200,
-criador: `${criador}`,
-resultado: resultado
-})
-}).catch(e => {
-res.json({
-msg: `erro no servidor interno`
-})
-})
-} else {
-res.json(resposta.semkey)
-}
-})
-
-router.get('/youtube/pesquisar', async (req, res, next) => {
-q = req.query.q
-var apikey = req.query.apikey
-if(!apikey) return res.json(resposta.semkey)
-if(listkey.includes(apikey)){
-ytSearch(q).then(result => {
-res.json({
-status: true,
-código: 200,
-criador: `${criador}`,
-resultado: result
-})
 }).catch(e => {
 res.json({
 msg: `erro no servidor interno`
