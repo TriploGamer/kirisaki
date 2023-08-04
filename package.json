@@ -1,17 +1,11 @@
 {
   "name": "kirisaki-rest-api",
   "version": "1.0.0",
-  "description": "minha base de api feita por ᥬ✯𝓙𝓖-𝓑𝓸𝓽𝓼ツ​᭄",
+  "description": "minha api feita por ᥬ✯𝓙𝓖-𝓑𝓸𝓽𝓼ツ​᭄",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [
-    "simple",
-    "rest",
-    "api"
-  ],
   "author": "ᥬ✯𝓙𝓖-𝓑𝓸𝓽𝓼ツ​᭄",
   "dependencies": {
     "base-64": "^1.0.0",
