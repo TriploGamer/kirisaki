@@ -1,422 +1,356 @@
-<!--
-=========================================================
-* * Black Dashboard - v1.0.0
-=========================================================
-
-* Feito pelo: Tim
-* Modificado por: mim :)
-
-=========================================================
--->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="apple-touch-icon" sizes="76x76" href="https://telegra.ph/file/8d12dd019b3479156497e.jpg">
-<link rel="icon" type="image/png" href="https://telegra.ph/file/8d12dd019b3479156497e.jpg">
-<title>KIRISAKI - REST - API'S</title>
-<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-<link href="https://jg-botsofc.github.io/arquivos2/assets/css/nucleo-icons.css" rel="stylesheet" />
-<link href="https://jg-botsofc.github.io/arquivos2/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-<link href="https://jg-botsofc.github.io/arquivos2/assets/demo/demo.css" rel="stylesheet" />
+<title>Kirisaki - Rest Api's</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+<meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+<link rel="icon" href="https://telegra.ph/file/a4d1a5b90c33fd0f0417c.jpg">
+
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/chartist/css/chartist.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/toastr/toastr.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/dark/assets/css/main.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/dark/assets/css/color_skins.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+  span{
+    font-family: 'Lobster', cursive;
+  }
+</style>
+
+
 </head>
+<body class="theme-blue">
 
-<body class="">
-<div class="wrapper">
-<div class="sidebar">
-<div class="sidebar-wrapper">
-<div class="logo">
-<a href="javascript:void(0)" class="simple-text logo-normal">REST - API'S</a>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+<div class="page-loader-wrapper">
+<div class="loader">
+<div class="m-t-30"><img src="https://www.wrraptheme.com/templates/lucid/html/assets/images/logo-icon.svg" width="48" height="48" alt="Lucid"></div>
+<p>carregando...</p>
 </div>
-<ul class="nav">
+</div>
 
-<!--
-=========================================================
-* * Nome Aqui
-=========================================================
--->
+<div id="wrapper">
+<nav class="navbar navbar-fixed-top">
+<div class="container-fluid">
+<div class="navbar-btn">
+<button type="button" class="btn-toggle-offcanvas"> <span class="iconify" data-icon="dashicons:menu" style="color: limegreen;" data-width="25" data-height="25"></span></button>
+</div>
+<div class="navbar-brand">
+</div>
+<div class="navbar-right">
 
-<li class="active">
-<a href="index.html">
-<i class="tim-icons icon-chart-pie-36"></i>
-<p>Dashboard</p>
-</a>
+<div id="navbar-menu">
+<ul class="nav navbar-nav">
+<li>
+<li>
+<a href="/i/logout" class="icon-menu"><i class="fa fa-sign-out"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div id="left-sidebar" class="sidebar">
+<div class="sidebar-scroll">
+<div class="user-account">
+<img src="https://telegra.ph/file/6bde9943728a8c8244864.png" class="rounded-circle user-photo" alt="User Profile Picture">
+<div class="dropdown">
+<span>Seja Bem Vindo(a),</span>
+<a class="user-name"><strong>KIRISAKI REST API'S</strong></a>
+</div>
+</div>
+
+<ul class="nav nav-tabs">
+<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu Api's</a></li>
+<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="fa fa-cog"></i></a></li>
+<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#question"><i class="fa fa-info-circle"></i></a></li>
+</ul>
+
+<div class="tab-content p-l-0 p-r-0">
+<div class="tab-pane active" id="menu">
+<nav id="left-sidebar-nav" class="sidebar-nav">
+<ul id="main-menu" class="metismenu">
+
+<!-- ///////////////////////////////////// -->
+
+<li>
+<a href="#App" class="has-arrow"> <i class="fa fa-youtube-play"></i> <span>Youtube Play's</span></a>
+<ul>
+
+<li><a href="/api/youtube/playmp3?&q=kawe%20querido%20diario&apikey=ale2">YOUTUBE PLAY AUDIO</a> </li></a></li>
+<li><a href="/api/youtube/playmp4?&q=kawe%20querido%20diario&apikey=ale2">YOUTUBE PLAY VIDEO</a> </li></a></li>
+<li><a href="/api/youtube/mp3?&link=https://www.youtube.com/watch?v=tIKutmqgzxo&t=100s&ab_channel=DJJEFFDEPL&apikey=ale2">YTMP3</a></li>
+<li><a href="/api/youtube/mp4?&link=https://www.youtube.com/watch?v=tIKutmqgzxo&t=100s&ab_channel=DJJEFFDEPL&apikey=ale2">YTMP4</a></li>
+<li><a href="/api/youtube/pesquisar?q=pou&apikey=ale2">YOUTUBE SEARCH</a></li>
+</ul>
 </li>
 
-<!--
-=========================================================
-* * Itens aqui
-=========================================================
--->
+<!-- ///////////////////////////////////// -->
 
-<li class="dropdown nav-item">
-<a href="outras.html">Outras
-<i class="tim-icons icon-tag"></i>
-</a>
+<li>
+<a href="#FileManager" class="has-arrow"><i class="fa fa-users"></i> <span>Medias Sociais</span></a>
+<ul>
+<li><a href="/api/download/tiktok?link=https://vm.tiktok.com/ZMLJDgYLV/&apikey=ale2">TIKTOK</a></li>
+</ul>
 </li>
 
-<li class="dropdown nav-item">
-<a href="logos-txt.html">Logos-txt
-<i class="tim-icons icon-caps-small"></i>
-</a>
+<!-- ///////////////////////////////////// -->
+
+<li>
+<a href="#Downloads" class="has-arrow"><i class="fa fa-cloud-download"></i> <span>Download</span></a>
+<ul>
+<li><a href="/api/baixar/mediafire?link=https://www.mediafire.com/file/ty2gq93gzn7uzd9/SMARTGAGA+1.1+ULTRA+LITE+FULL+CONTAS+TELLEZ+ATUALIZADO.rar/file&apikey=ale2">Mediafire Download</a></li>
+</ul>
 </li>
 
-<li class="dropdown nav-item">
-<a href="download.html">Download
-<i class="tim-icons icon-cloud-download-93"></i>
-</a>
-</li>
+<!-- ///////////////////////////////////// -->
 
-<li class="dropdown nav-item">
-<a href="funcoes.html">Funções
-<i class="tim-icons icon-components"></i>
-</a>
-</li>
+<li>
+<a href="#Pages" class="has-arrow"><i class="fa fa-file-text"></i> <span>Text Pro</span></a>
+<ul>
 
-<!--
-=========================================================
-* * Termino
-=========================================================
--->
+<li style="color: white"><strong><center>[ TEXT PRO DE 2 TEXTO ]</center></strong></li>
+
+<li><a href="/api/textpro/halloween?texto=Marvel&apikey=ale2">HALLOWEEN</a></li>
+
+<li style="color: white"><strong><center>[ TEXT PRO DE 1 TEXTO ]</center></strong></li>
+
+<li><a href="/api/textpro/marvel?texto1=Marvel&texto2=Avengers&apikey=ale2">MARVEL</a></li>
 
 </ul>
-<a href="javascript:void(0)"></a>
-<div class="logo">
-<a href="javascript:void(0)" class="simple-text logo-mini">
-</a>
-</div>
-
-<ul class="nav">
-
-<li>
-<a href="https://github.com/JG-Bots/">
-<i class="tim-icons icon-heart-2"></i>
-<p>Meu GitHub 😎</p>
-</a>
 </li>
 
+<!-- ///////////////////////////////////// -->
+
 <li>
-<a href="https://youtube.com/channel/UC6Nvd3QgM0j1_ebNF4OC84g">
-<i class="tim-icons icon-heart-2"></i>
-<p>MEU CANAL 😘</p>
-</a>
+<a href="#Pages" class="has-arrow"><i class="fa fa-image"></i><span>Card Canvas</span></a>
+<ul>
+<li><a href="/api/canvas/welcome?titulo=Bemvindo&nome=JG-Bots&perfil=https://telegra.ph/file/0cf51bf5ebd52def22992.jpg&fundo=https://telegra.ph/file/071a4df8198187826cbf1.jpg&grupo=Chat%20By%20JG-Bots&apikey=ale2">BEMVINDO</a></li>
+<li><a href="/api/canvas/welcome?titulo=ByeBye&nome=JG-Bots&perfil=https://telegra.ph/file/0cf51bf5ebd52def22992.jpg&fundo=https://telegra.ph/file/071a4df8198187826cbf1.jpg&grupo=Chat%20By%20JG-Bots&apikey=ale2">ADEUS</a></li>
+</ul>
 </li>
- 
+
+<!-- ///////////////////////////////////// -->
+
+<li>
+<a href="#Tables" class="has-arrow"><i class="fa fa-anchor"></i> <span>Tools</span></a>
+<ul>
+
+<li><a href="/api/others/fazernick?texto=Jerfinhopro&apikey=ale2">FAZERNICK<span class="badge badge-warning float-right">v1</span></a></li>
+<li><a href="/api/others/ttp?texto=Jerfinhopro&apikey=ale2">TTP</a></li>
+<li><a href="/api/others/simi?texto=Oi&apikey=ale2">SIMI</a></li>
+<li><a href="/api/consultas/geradordedados?apikey=ale2">GERAR-DADOS</a></li>
+
+</ul>
+</li>
+
+<!-- ///////////////////////////////////// -->
+
+</ul>
+</nav>
+</div>
+
+<div class="tab-pane p-l-15 p-r-15" id="setting">
+<h6>Escolha o Tema!</h6>
+<ul class="choose-skin list-unstyled">
+<li data-theme="purple">
+<div class="purple"></div>
+<span>Roxo</span>
+</li>
+<li data-theme="blue" class="active">
+<div class="blue"></div>
+<span>Azul Claro</span>
+</li>
+<li data-theme="cyan">
+<div class="cyan"></div>
+<span>Azul Ciano</span>
+</li>
+<li data-theme="green">
+<div class="green"></div>
+<span>Verde</span>
+</li>
+<li data-theme="orange">
+<div class="orange"></div>
+<span>Laranja</span>
+</li>
+<li data-theme="blush">
+<div class="blush"></div>
+<span>Rosa</span>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</div>
+
+<div class="tab-pane p-l-15 p-r-15" id="question">
+<ul class="list-unstyled question">
+<li class="menu-heading">Redes Sociais Do Dono</li>
+<li><a href="https://chat.whatsapp.com/DiMy1DlJIMELrPtdhqb3fb">Meu Grupo De Zap</a></li>
+<li><a href="https://youtube.com/@jg-bots5203">Canal</a></li>
+<li><a href="https://wa.me/558594034292?text=Olá JG-Bots :)">Whatsapp</a></li>
+
+<li class="menu-heading">Creditos Do Html</li>
+<li><a href="https://lzmods-api.tk/">LZMODS</a></li>
+</ul>
 </div>
 </div>
-<div class="main-panel">
+</div>
+</div>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle d-inline">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="javascript:void(0)">KIRISAKI - REST - API</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
-                  <span class="d-lg-none d-md-block">Search</span>
-                </button>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="https://telegra.ph/file/8d12dd019b3479156497e.jpg" alt="Profile Photo">
-                  </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <p class="d-lg-none">
-                    Profile
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Login</a></li>
-                  <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Register</a></li>
-                </ul>
-              </li>
-              <li class="separator d-lg-none"></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-<!-- End Navbar -->
-
-<div class="content">
+<div id="main-content">
+<div class="container-fluid">
+<div class="block-header">
 <div class="row">
-<div class="col-xl-3 col-lg-6 col-md-12 col-xm-12">
-<div class="card overflow-hidden dash1-card border-0">
+<div class="col-lg-5 col-md-8 col-sm-12">
+<h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> DOCS - JG-Bots-Api</h2>
+<ul class="breadcrumb">
+<li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
+<li class="breadcrumb-item active">Docs</li>
+</ul>
+</div>
+</div>
+
+<div class="row"> 
+
+<div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+<div class="card">
 <div class="card-body">
-<div class="d-flex align-items-end justify-content-between">
-<div>
-<p class=" mb-1 ">ENDEREÇO IP ↯</p>
-<h2 class="mb-1 number-font">
-<div id="ip">
-<html>
-<body>
-<script type="text/javascript">
+<div class="row">
+<div class="col-9">
+<div class="d-flex align-items-center align-self-start">
+<h3 class="mb-0"><script type="text/javascript">
 var userip;
 </script>
 <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
-<h3 class="mb-0" ><script type="text/javascript">
+</h3><h3 class="mb-0"><script type="text/javascript">
 document.write(userip);
 </script></h3>
-</body>
-</html>
-</div>
-</h2>
-<small class="fs-12 text-muted">Seu IP</small>
-</div>
-<span class="text-info fs-35 dash1-iocns bg-info-transparent border-info"><i class="fa fa-wifi" aria-hidden="true"></i></span>
 </div>
 </div>
+<div class="col-3">
+<div class="icon icon-box-success ">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--eos-icons" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="eos-icons:ip" style="color: #3eacff; font-size: 17px;"><path fill="currentColor" d="M4.26 12A8.243 8.243 0 0 1 4 10a8.243 8.243 0 0 1 .26-2h3.38a16.513 16.513 0 0 0-.14 2a16.514 16.514 0 0 0 .14 2h2.02a14.71 14.71 0 0 1-.16-2a14.581 14.581 0 0 1 .16-2h4.68a14.59 14.59 0 0 1 .16 2a14.72 14.72 0 0 1-.16 2h2.02a16.512 16.512 0 0 0 .14-2a16.511 16.511 0 0 0-.14-2h3.38a8.24 8.24 0 0 1 .26 2a8.24 8.24 0 0 1-.26 2h2.059A10 10 0 1 0 2.2 12Zm14.66-6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 6ZM12 2.04A14.086 14.086 0 0 1 13.91 6h-3.82A14.086 14.086 0 0 1 12 2.04Zm-2.59.4A15.648 15.648 0 0 0 8.03 6H5.08a7.987 7.987 0 0 1 4.33-3.56Zm3.339 15.055h2v1h-2z"></path><path fill="currentColor" d="M20.998 14H3.002A2.002 2.002 0 0 0 1 16.002v5.996A2.002 2.002 0 0 0 3.002 24h17.996A2.002 2.002 0 0 0 23 21.998v-5.996A2.002 2.002 0 0 0 20.998 14ZM9.251 22.005h-1.5v-6h1.5Zm6.998-3.51a1.473 1.473 0 0 1-1.5 1.5h-2v2h-1.5v-6h3.5a1.473 1.473 0 0 1 1.5 1.5Z"></path></svg>
+</div>
+</div>
+</div>
+<h6 class="text-muted font-weight-normal">Seu IP</h6>
 </div>
 </div>
 </div>
 
-<form action="/api/cekapikey">
-<div class="row">
-<div class="col-xl-12 col-lg-12 col-md-12">
+<div class="col-xl-3 col-sm-6 grid-margin stretch-card">
 <div class="card">
-<div class="card-header">
-<h4 class="card-title"><i class="tim-icons icon-key-25" aria-hidden="true"></i> CHECAR SE A KEY É VÁLIDA</h4>
+<div class="card-body">
+<div class="row">
+<div class="col-9">
+<div class="d-flex align-items-center align-self-start">
+<h3 class="count font-weight-bold" id="visits">carregando...</h3>
 </div>
-<div class="card-body text-sm-left font-weight-bold">
-<input class="form-control font-weight-bold text-center" type="text" placeholder="DIGITE A KEY" name="apikey" required>
-<small id="textHelp" class="font">
-não tem apikey? compre uma agora!
-<a href="https://wa.me/6285852203076">
-Whatsapp
-</a>
-</small>
-</br>
-</br>
-<button type="submit" class="btn btn-primary content-justify-center"><i class="mdi mdi-arrow-right-bold-hexagon-outline"></i> <span class="font-weight-bold">CHECAR</span></button>
+</div>
+<div class="col-3">
+<div class="icon icon-box-success ">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--fa-solid" width="1.25em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 512" data-icon="fa-solid:users" style="color: #3eacff; font-size: 17px;"><path fill="currentColor" d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6c40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32S208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path></svg>
 </div>
 </div>
 </div>
+<h6 class="text-muted font-weight-normal">Total De Visitantes</h6>
 </div>
-</form>
+</div>
+</div>
 
-<!--
-=========================================================
-* * Forter Copy
-=========================================================
--->
-<footer class="footer">
-<div class="container-fluid">
-<ul class="nav">
-<li class="nav-item">
+</div>
 
-<a href="javascript:void(0)" class="nav-link">© JG-Bots - JerfinhoPro</a>
+<div class="row clearfix">
+<div class="col-lg-4 col-md-12">
+<div class="card">
+<div class="header">
+<h2>Noticias Do Site</h2>
+</div>
+<div class="body">
+<ul class="list-unstyled feeds_widget">
 
+<li>
+<div class="feeds-left">
+<i class="fa fa-info-circle"></i>
+</div>
+<div class="feeds-body">
+<h4 class="title">Design Atualizado <small class="float-right text-muted">01/12/22</small></h4>
+<small>Design Dos Docs Atualizado!</small>
+</div>
 </li>
-</ul>
-</footer>
-</div>
 
+<li>
+<div class="feeds-left">
+<i class="fa fa-youtube-play"></i>
 </div>
+<div class="feeds-body">
+  <h4 class="title">Youtube Play V2 <small class="float-right text-muted">01/12/22</small></h4>
+  <small>Novas Apis De Play Adicionadas!</small>
+</div>
+</li>
 
-<div class="fixed-plugin">
-<div class="dropdown show-dropdown">
-<a href="#" data-toggle="dropdown">
-<i class="fa fa-cog fa-2x"> </i>
-</a>
-<ul class="dropdown-menu">
-<li class="header-title"> COR DO BACKGROUND</li>
-<li class="adjustments-line">
-<a href="javascript:void(0)" class="switch-trigger background-color">
-<div class="badge-colors text-center">
-<span class="badge filter active" style="background: pink;" data-color="pink"></span>
-<span class="badge filter" style="background: blue;" data-color="blue"></span>
-<span class="badge filter" style="background: green;" data-color="green"></span>
+<li>
+<div class="feeds-left">
+<i class="fa fa-key"></i>
 </div>
-<div class="clearfix"></div>
-</a>
+<div class="feeds-body">
+<h4 class="title text-warning">Apikey Gratis<small class="float-right text-muted">1/12/2022</small></h4>
+<small>Apikey Gratis: ale2 Adicionada!</small>
+</div>
 </li>
-<li class="adjustments-line text-center color-change">
-<span class="color-label">MODO CLARO</span>
-<span class="badge light-badge mr-2"></span>
-<span class="badge dark-badge ml-2"></span>
-<span class="color-label">MODO ESCURO</span>
-</li>
+
 </ul>
 </div>
 </div>
-  <!--   Core JS Files   -->
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/core/jquery.min.js"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/core/popper.min.js"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/core/bootstrap.min.js"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/plugins/chartjs.min.js"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/plugins/bootstrap-notify.js"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/js/black-dashboard.min.js?v=1.0.0"></script>
-<script src="https://jg-botsofc.github.io/arquivos2/assets/demo/demo.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+</div>
 
 
+</ul>
+</div>
+</div>
+</div>
 
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
+<script src="https://www.wrraptheme.com/templates/lucid/html/dark/assets/bundles/libscripts.bundle.js"></script>
+<script src="https://www.wrraptheme.com/templates/lucid/html/dark/assets/bundles/vendorscripts.bundle.js"></script>
+<script src="https://www.wrraptheme.com/templates/lucid/html/dark/assets/bundles/chartist.bundle.js"></script>
+<script src="https://www.wrraptheme.com/templates/lucid/html/dark/assets/bundles/knob.bundle.js"></script> 
+<script src="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/toastr/toastr.js"></script>
+<script src="https://www.wrraptheme.com/templates/lucid/html/dark/assets/bundles/mainscripts.bundle.js"></script>
+<script src="./layouts/index.js"></script>
 
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-  </script>
-
-<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
+window.setTimeout("getvisit()", 1000);
+
+function getvisit() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", `https://api.countapi.xyz/hit/jgbots-rest-api.herokuapp.com/visits`);
+  xhr.responseType = "json";
+  xhr.onload = function() {
+  document.getElementById('visits').innerText = this.response.value
+}
+xhr.send();
+}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js">
-</script>
-<script>
-swal({
-title: 'Oii',
-text: 'Site de Api, sendo desenvolvido por JG-Bots',
-imageUrl: 'https://telegra.ph/file/ff1e809ddb89101c73838.jpg',
-footer: 'Made By JG-Bots',
-imageWidth: 200,
-imageHeight: 200,
-imageAlt: ':)',
-animation: true
-})
-</script>
+
 </body>
-
 </html>
