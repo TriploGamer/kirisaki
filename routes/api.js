@@ -27,7 +27,7 @@ const criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
    ///ARQUIVOS DE SCRAPING OU SEI LA\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const { fetchJson } = require(__path + '/lib/scrapper.js')
+const { ttp } = require(__path + '/lib/scrapper.js')
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
            ///RESPOSTAS DA API\\\
