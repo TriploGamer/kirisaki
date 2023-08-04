@@ -16,6 +16,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const router  = express.Router();
 const { fetchJson } = require(__path + '/lib/fetcher.js')
+const request = require("request");
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
            ///NICKS DO CRIADOR\\\
@@ -26,7 +27,7 @@ const criador = criadorList[Math.floor(Math.random() * criadorList.length)];
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
    ///ARQUIVOS DE SCRAPING OU SEI LA\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const { ttp } = require(__path + './../lib/scrapper.js');
+const { fetchJson } = require(__path + '/lib/scrapper.js')
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
            ///RESPOSTAS DA API\\\
