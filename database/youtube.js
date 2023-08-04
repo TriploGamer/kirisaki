@@ -1,5 +1,5 @@
-const yt = require("../node_modules/ytdl-core")
-const yts = require("../node_modules/yt-search")
+const yt = require("./node_modules/ytdl-core")
+const yts = require("./node_modules/yt-search")
 
 async function PlayLinkMP3(url) {
   return new Promise((resolve, reject) => {
