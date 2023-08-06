@@ -49,7 +49,7 @@ error: {
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
  ///LISTA DAS APIKEYS VC PODE ADD MS\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const listkey = ["jg", "ale2", "JG-APIKEY_01"];
+const listkey = ["jg", "JG-API_01"];
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
       ///LISTA DAS APIKEYS PREMIUM\\\
@@ -83,7 +83,6 @@ res.json({
   status: 'ApiKey ATIVA',
   criador: `${criador}`,
   apikey: `${apikey}`,
-  limite: 999,
 })
 } else {
 res.json(resposta.semkey)
