@@ -15,6 +15,9 @@ router.get('/', (req, res) => {
 router.get('/api', (req, res) => {
     res.sendFile(__path + '/views/index.html')
 })
+router.get('/valor', (req, res) => {
+    res.sendFile(__path + '/views/valor.html')
+})
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
    ///UMA CONFIGURAÇÃOSINHA NE KSK\\\
