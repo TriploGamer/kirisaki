@@ -49,7 +49,7 @@ error: {
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
  ///LISTA DAS APIKEYS VC PODE ADD MS\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
-const listkey = ["jg", "JG-API_01"];
+const listkey = ["jg", "JG-01"];
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
       ///LISTA DAS APIKEYS PREMIUM\\\
