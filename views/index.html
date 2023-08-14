@@ -1,166 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZenFlix HD</title>
+<title>Kirisaki - Rest Api's</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+<meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+<link rel="icon" href="https://telegra.ph/file/a4d1a5b90c33fd0f0417c.jpg">
+
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/chartist/css/chartist.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/assets/vendor/toastr/toastr.min.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/dark/assets/css/main.css">
+<link rel="stylesheet" href="https://www.wrraptheme.com/templates/lucid/html/dark/assets/css/color_skins.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-
-<!-- OWL CAROUSEL -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-
-<!-- BOX ICONS -->
-
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-<link rel="stylesheet" href="css/grid.css">
-<link rel="stylesheet" href="css/app.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
 <style>
-.abcde {
-}
+  span{
+    font-family: 'Lobster', cursive;
+  }
 </style>
 
+
 </head>
-<body>
+<body class="theme-blue">
 
-<div class="nav-wrapper">
-<div class="container">
-<div class="nav">
-<a href="#" class="logo">
-<i class='bx bx-movie-play bx-tada main-color'></i>Zen<span class="main-color"></span>Flix
-</a>
-</div>
-</div>
-</div>
-<!-- END NAV -->
+<div id="wrapper">
+<div class="vertical-align-wrap">
+<div class="vertical-align-middle auth-main">
+<div class="auth-box">
+<div class="card">
+<div class="header">
+<center
 
-<!-- SPECIAL MOVIE SECTION -->
-
-<div class="hero-slide-item">
-<img src="img/footer-bg.jpg" alt="">
-<div class="overlay"></div>
-<div class="hero-slide-item-content">
-<div class="item-content-wraper">
-<div class="abcde">
-<h1>Olá BemVindo ao Site de Filmes e Series GRATIS !!!! Espero que gostem</h1>
-</div>
-<div class="item-action">
-<a href="api" class="btn btn-hover">
-<i class="bx bxs-right-arrow"></i>
-<span>!! ENTRAR NO SITE !!</span>
-</a>
-</div>
-</div>
-</div>
+<h5 class="lead">ENTRAR NA SUA CONTA</h5>
+</center>
 </div>
 
-<!-- TOP MOVIES SLIDE -->
-<div class="top-movies-slide">
-<div class="owl-carousel" id="top-movies-slide">
+<div class="body">
+<form class="form-auth-small">
 
-<!-- MOVIE ITEM -->
+<div class="form-group">
+<label for="signin-email" class="control-label sr-only">Email</label>
+<input type="text" class="form-control" id="login" placeholder="Email">
+</div>
 
-<div class="movie-item">
-<img src="./img/movies/meu-amigo-enzo.jpg" alt="">
- <div class="movie-item-content">
-<div class="movie-item-title">
-Meu Amigo Enzo
+<div class="form-group">
+<label for="signin-password" class="control-label sr-only">Password</label>
+<input type="password" class="form-control" id="senha" placeholder="Senha">
 </div>
-<div class="movie-infos">
-<div class="movie-info">
-<i class="bx bxs-star"></i>
-<span>9.5</span>
+
+<button type="submit" class="btn btn-primary btn-lg btn-block" onclick="logar(); return false">LOGIN</button>
+<div class="bottom">
+<span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="https://wa.me/5585992895989">Esqueceu a Senha?</a></span>
+<span>Não tem uma Conta? <a href="https://wa.me/5585992895989">Registrar</a></span>
 </div>
-<div class="movie-info">
-<i class="bx bxs-time"></i>
-<span>120 mins</span>
+</form>
 </div>
-<div class="movie-info">
-<span>HD</span>
 </div>
-<div class="movie-info">
-<span>16+</span>
 </div>
 </div>
 </div>
 </div>
 
+<script>
+function logar(){
 
-<div class="movie-item">
-<img src="./img/emoji-o-filme.jpg" alt="">
- <div class="movie-item-content">
-<div class="movie-item-title">
-Emoji O Filme
-</div>
-<div class="movie-infos">
-<div class="movie-info">
-<i class="bx bxs-star"></i>
-<span>9.5</span>
-</div>
-<div class="movie-info">
-<i class="bx bxs-time"></i>
-<span>120 mins</span>
-</div>
-<div class="movie-info">
-<span>HD</span>
-</div>
-<div class="movie-info">
-<span>16+</span>
-</div>
-</div>
-</div>
-</div>
+var login = document.getElementById('login').value;
+var senha = document.getElementById('senha').value;
 
-<div class="movie-item">
-<img src="./img/movies/lorax.jpg" alt="">
- <div class="movie-item-content">
-<div class="movie-item-title">
-O Lorax
-</div>
-<div class="movie-infos">
-<div class="movie-info">
-<i class="bx bxs-star"></i>
-<span>9.5</span>
-</div>
-<div class="movie-info">
-<i class="bx bxs-time"></i>
-<span>120 mins</span>
-</div>
-<div class="movie-info">
-<span>HD</span>
-</div>
-<div class="movie-info">
-<span>16+</span>
-</div>
-</div>
-</div>
-</div>
+if(login == "JG-BOTSOFC" && senha == "1234"){
+alert('Sucesso');
+location.href = "/api";
+}
 
-</div>
-</div>
+if(login == "admin2" && senha == "admin2"){
+alert('Sucesso');
+location.href = "/api";
+}
 
-<!-- END SPECIAL MOVIE SECTION -->
-
-<!-- COPYRIGHT SECTION -->
-
-<div class="copyright">
-<br>
-Videos e Series By : RedeCanais <br> Copyright 2022<a href="https://m.youtube.com/channel/UC6Nvd3QgM0j1_ebNF4OC84g" target="_blank">
-JG-Bots <br> <br> </a>
-</div>
+}
+</script>
 
 </body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<!-- OWL CAROUSEL -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-<!-- APP SCRIPT -->
-<script src="css/app.js"></script>
 </html>
