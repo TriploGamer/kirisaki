@@ -1,6 +1,7 @@
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
            ///MODULOS E CONTS\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
+console.log('Iniciando....')
 const express = require('express')
 const cors = require('cors')
 const secure = require('ssl-express-www')
@@ -30,8 +31,7 @@ app.use('/api', apirouter)
 ///O ABRIDOR OU SEILA DA PORTA KAKAK\\\
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
 app.listen(PORT, () => {
-console.log(color("Servidor rodando na porta: " + PORT,'red'))
-console.log(color(`entre no site: http://localhost:${PORT}/`,'green'))
+    console.log(color(`Servidor Conectado Com Sucesso! Rodando Na Porta http://localhost:${PORT}/`, 'green'))
 })
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
