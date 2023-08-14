@@ -13,7 +13,10 @@ router.get('/', (req, res) => {
     res.sendFile(__path + '/views/index.html')
 })
 router.get('/api', (req, res) => {
-    res.sendFile(__path + '/views/home.html')
+    res.sendFile(__path + '/views/docs.html')
+})
+router.get('/valor', (req, res) => {
+    res.sendFile(__path + '/views/valor.html')
 })
 
 ///⊰᯽⊱═══❖•ೋ° △ °ೋ•❖═══⊰᯽⊰\\\
